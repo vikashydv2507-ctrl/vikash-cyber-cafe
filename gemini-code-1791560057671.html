@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>विकास साइबर कैफे (Vikash Cyber Cafe) | आपकी सुविधा • हमारा लक्ष्य</title>
+    <style>
+        :root {
+            --primary-blue: #004aad;
+            --accent-gold: #ffbd59;
+            --dark-navy: #001f3f;
+            --light-bg: #f4f7f6;
+            --white: #ffffff;
+            --text-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--dark-navy), var(--primary-blue));
+            color: var(--white);
+            text-align: center;
+            padding: 45px 20px 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tagline {
+            background-color: var(--accent-gold);
+            color: var(--dark-navy);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 1.1rem;
+        }
+
+        /* Profile & Details */
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+
+        .owner-photo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-gold);
+            object-fit: cover;
+        }
+
+        .owner-info h3 {
+            font-size: 1.3rem;
+            color: #fff;
+        }
+
+        .owner-info p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        /* Container & Navigation */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Services Grid */
+        .section-title {
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            display: block;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .service-card h4 {
+            color: var(--dark-navy);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Banner / Highlights */
+        .banner-section {
+            background: linear-gradient(to right, #004aad, #0077b6);
+            color: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .banner-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .badge-list {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-info h4 {
+            color: var(--primary-blue);
+            margin-bottom: 12px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-navy);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        footer p span {
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <h1>विकास साइबर कैफे</h1>
+            <p style="font-size: 1.2rem; margin-top: 5px;">Vikash Cyber Cafe</p>
+            <div class="tagline">आपकी सुविधा • हमारा लक्ष्य</div>
+            
+            <div class="profile-container">
+                <div class="owner-info">
+                    <h3>संचालक (Prop): विकाश यादव</h3>
+                    <p>स्थान: बिछवे (Bichhwe) | स्थापना (Estd): 2025</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Services Section -->
+        <h2 class="section-title">हमारी प्रमुख सेवाएं (Our Services)</h2>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <div class="service-icon">💳</div>
+                <h4>आधार सेवाएं (Aadhaar)</h4>
+                <p>आधार कार्ड डाउनलोड, प्रिंटिंग और अपडेशन सेवाएं।</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏦</div>
+                <h4>बैंकिंग सेवाएं (Bank Services)</h4>
+                <p>एईपीएस (AePS), मनी ट्रांसफर और बैलेंस पूछताछ।</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📜</div>
+                <h4>प्रमाण पत्र (Certificates)</h4>
+                <p>आय, जाति, निवास एवं अन्य ऑनलाइन प्रमाण पत्र आवेदन।</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚆</div>
+                <h4>रेलवे टिकट (Railway)</h4>
+                <p>तत्काल एवं सामान्य ट्रेन टिकट बुकिंग।</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">✈️</div>
+                <h4>फ्लाइट टिकट (Flight)</h4>
+                <p>देश एवं विदेश की हवाई यात्रा टिकट बुकिंग।</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💡</div>
+                <h4>बिल भुगतान (Bill Pay)</h4>
+                <p>बिजली बिल, मोबाइल रिचार्ज और DTH रिचार्ज।</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💸</div>
+                <h4>मनी ट्रांसफर (Money Transfer)</h4>
+                <p>सुरक्षित और तुरंत बैंक ट्रांसफर सुविधा।</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🖨️</div>
+                <h4>प्रिंट व स्कैन (Print / Scan)</h4>
+                <p>कलर प्रिंटआउट, फोटोकॉपी और डॉक्यूमेंट स्कैनिंग।</p>
+            </div>
+
+        </div>
+
+        <!-- Banner Highlight -->
+        <div class="banner-section">
+            <div class="banner-text">
+                <h3>डिजिटल इंडिया & CSC अधिकृत केंद्र</h3>
+                <p>सभी प्रकार के सरकारी फॉर्म और ऑनलाइन आवेदन की सुविधा उपलब्ध है।</p>
+            </div>
+            <div class="badge-list">
+                <span class="badge">✓ CSC Services</span>
+                <span class="badge">✓ Digital India</span>
+                <span class="badge">✓ Fast Service</span>
+            </div>
+        </div>
+
+        <!-- Contact & Location -->
+        <h2 class="section-title">संपर्क करें (Contact Us)</h2>
+        <div class="contact-card">
+            <div class="contact-info">
+                <h4>पता व लोकेशन</h4>
+                <p>📍 <strong>स्थान:</strong> बिछवे (Bichhwe)</p>
+                <p>👤 <strong>प्रोपराइटर:</strong> विकाश यादव</p>
+                <p>🗓️ <strong>स्थापना:</strong> 2025</p>
+            </div>
+            <div class="contact-info">
+                <h4>कार्य समय</h4>
+                <p>🕒 <strong>सोमवार - शनिवार:</strong> सुबह 8:00 AM से शाम 8:00 PM</p>
+                <p>🕒 <strong>रविवार:</strong> सुबह 9:00 AM से दोपहर 2:00 PM</p>
+                <p>⚡ <strong>विशेषता:</strong> त्वरित और भरोसेमंद सेवा</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <span>विकास साइबर कैफे (Vikash Cyber Cafe)</span>. सर्वाधिकार सुरक्षित।</p>
+    </footer>
+
+</body>
+</html>
